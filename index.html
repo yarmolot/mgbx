@@ -1,228 +1,363 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>MGBX — Your Guaranteed Airdrop & Bonus!</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MGBX — Hidden Gem Landing</title>
+  <meta name="description" content="Missed Hyperliquid and Bleed Fees on the Latest Perp DEX Hype? Discover MGBX and start stacking Echo Points."/>
   <style>
-    :root {
-      --primary: #49ffb3;
-      --accent: #ffd259;
-      --bg-dark: #161e2c;
-      --card-bg: #1b2538;
-      --txt: #eaf4fc;
-      --txt-accent: #173344;
-      --radius: 18px;
+    /* ====== Base ====== */
+    :root{
+      --bg:#0f1115;
+      --card:#101218;
+      --muted:#9aa4b2;
+      --accent:#ffd24d; /* warm yellow */
+      --accent-2:#f3b03b;
+      --cta:#ffb84d;
+      --danger:#ff6b6b;
+      --glass: rgba(255,255,255,0.03);
+      --glass-2: rgba(255,255,255,0.02);
+      --line: rgba(255,255,255,0.05);
+      --accent-contrast:#111219;
+      --success:#7bd389;
+      --font-sans: "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     }
-    body {
-      background: var(--bg-dark);
-      color: var(--txt);
-      font-family: 'Montserrat', Arial, sans-serif;
-      margin: 0;
-      padding: 0;
+    html,body{
+      margin:0;
+      padding:0;
+      font-family:var(--font-sans);
+      background:linear-gradient(180deg,var(--bg) 0%, #07080a 100%);
+      color: #e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      min-height:100vh;
+      line-height:1.45;
     }
-    .wrapper {
-      max-width: 730px;
-      margin: 40px auto;
-      padding: 18px;
-      display: grid;
-      gap: 28px;
-    } 
-    .card {
-      background: var(--card-bg);
-      border-radius: var(--radius);
-      padding: 32px 22px;
-      box-shadow: 0 6px 22px #143c34a0;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      align-items: stretch;
+    a { color:inherit; text-decoration:none; }
+    img { max-width:100%; display:block; }
+    .container{
+      max-width:1100px;
+      margin:36px auto;
+      padding:28px;
     }
-    h1, h2 {
-      color: var(--primary);
-      font-weight: 700;
-      margin: 0 0 10px 0;
+
+    /* ====== Header / Hero ====== */
+    .hero{
+      background: linear-gradient(90deg, rgba(255,210,77,0.06), rgba(243,176,59,0.03));
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:28px;
+      display:flex;
+      gap:24px;
+      align-items:center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
     }
-    h1 { font-size: 2.1em; text-align: center; margin-bottom: 0.2em;}
-    h2 { font-size: 1.25em;}
-    .headline {
-      background: linear-gradient(90deg, var(--accent) 45%, var(--primary) 100%);
-      color: var(--txt-accent);
-      border-radius: var(--radius);
-      font-weight: 700;
-      text-align: center;
-      font-size: 1.16em;
-      padding: 14px 10px 14px 10px;
-      margin-bottom: 10px;
+    .hero-left{
+      flex:1;
     }
-    .cta {
-      background: linear-gradient(90deg, var(--primary) 65%, var(--accent) 100%);
-      color: var(--txt-accent);
-      font-weight: 700;
-      border-radius: var(--radius);
-      text-align: center;
-      font-size: 1.18em;
-      padding: 18px 12px;
-      margin-top: 12px;
-      margin-bottom: 8px;
+    .kicker{
+      display:inline-block;
+      background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      padding:6px 12px;
+      border-radius:999px;
+      color:var(--accent-contrast);
+      font-weight:700;
+      font-size:13px;
+      letter-spacing:0.6px;
+      margin-bottom:12px;
     }
-    .btn {
-      background: var(--accent);
-      color: var(--txt-accent);
-      font-weight: 700;
+    h1{
+      margin:0 0 12px 0;
+      font-size:28px;
+      line-height:1.05;
+      color: #fff;
+      text-shadow: 0 2px 16px rgba(243,176,59,0.08);
+    }
+    p.lead{
+      margin:0 0 18px 0;
+      color:var(--muted);
+      font-size:15px;
+    }
+    .cta-row{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      margin-top:6px;
+    }
+    .btn{
+      background: linear-gradient(180deg,var(--cta),#ff9b1a);
+      color:var(--accent-contrast);
+      font-weight:700;
+      padding:12px 18px;
+      border-radius:10px;
       border: none;
-      border-radius: 12px;
-      padding: 14px 26px;
-      font-size: 1.08em;
-      cursor: pointer;
-      margin: 10px auto 0 auto;
-      text-decoration: none;
-      max-width: 290px;
-      transition: background 0.24s, color 0.24s;
-      display: block;
+      cursor:pointer;
+      box-shadow:0 8px 20px rgba(255,160,50,0.12);
     }
-    .btn:hover {
-      background: var(--primary);
-      color: #111;
+    .btn.secondary{
+      background:transparent;
+      border:1px solid var(--line);
+      color:var(--muted);
+      font-weight:600;
+      padding:10px 16px;
+      border-radius:10px;
     }
-    ul {
-      margin: 8px 0 0 0;
-      padding: 0;
-      list-style: none;
+    .hero-right{
+      width:220px;
+      text-align:center;
+      padding:8px;
     }
-    ul li {
-      margin-bottom: 8px;
-      padding-left: 20px;
-      position: relative;
-      font-size: 1.03em;
+    .badge{
+      display:inline-block;
+      background:linear-gradient(90deg,#ffd76b,#ffb84d);
+      color:#111;
+      font-weight:800;
+      font-size:12px;
+      padding:8px 10px;
+      border-radius:10px;
+      box-shadow:0 6px 18px rgba(243,176,59,0.08);
     }
-    ul li:before {
-      content: "•";
-      position: absolute;
-      left: 6px;
-      color: var(--primary);
-      font-weight: 700;
+
+    /* ====== Grid ====== */
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 360px;
+      gap:20px;
+      margin-top:22px;
     }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 18px 0;
-      background: var(--card-bg);
-      border-radius: 11px;
-      overflow: hidden;
+    @media (max-width:980px){
+      .grid{ grid-template-columns:1fr; }
+      .hero{ flex-direction:column; align-items:flex-start;}
+      .hero-right{ width:100%; text-align:left; }
     }
-    th, td {
-      padding: 10px 8px;
-      text-align: left;
-      border-bottom: 1px solid #233c4a77;
+
+    /* ====== Card ====== */
+    .card{
+      background: linear-gradient(180deg,var(--card), rgba(255,255,255,0.02));
+      border-radius:12px;
+      padding:18px;
+      border:1px solid var(--line);
     }
-    th {
-      background: #233c4555;
-      color: #74e0c8;
-      font-weight: 600;
+
+    /* ====== Highlight boxes ====== */
+    .highlight{
+      background: linear-gradient(180deg, rgba(255,210,77,0.06), rgba(255,210,77,0.02));
+      border-left:4px solid var(--accent);
+      padding:14px;
+      border-radius:8px;
+      color:#fff;
+      margin:12px 0;
     }
-    tr:last-child td { border-bottom: none; }
-    td.key { background: #49ffb328; font-weight: 600;}
-    .highlight { background: var(--accent); color: var(--txt-accent); font-weight: 700; border-radius: 8px; padding: 3px 7px;}
-    .badges { margin-top: 12px; text-align: center;}
-    .badges a {
-      text-decoration: none; color: var(--accent); background: #223344; border-radius: 6px; padding: 4px 8px; margin: 0 4px;
-      font-weight:600; font-size:1em; display:inline-block;
+    .pill{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      background:var(--glass);
+      color:var(--muted);
+      font-size:13px;
+      border:1px solid rgba(255,255,255,0.02);
     }
-    .footer {
-      text-align: center;
-      color: #aab7cf;
-      font-size: .99em;
-      margin-top: 16px;
+
+    /* ====== Tables ====== */
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:12px;
+      font-size:14px;
     }
-    @media(max-width:700px){
-      .wrapper{padding:2px;}
-      .card{padding:16px 6px;}
-      h1{font-size:1.4em;}
+    thead th{
+      text-align:left;
+      color:var(--muted);
+      font-weight:700;
+      padding:10px 8px;
+      border-bottom:1px solid var(--line);
+      font-size:13px;
     }
+    tbody td{
+      padding:12px 8px;
+      border-bottom:1px dashed rgba(255,255,255,0.03);
+      vertical-align:top;
+    }
+
+    /* ====== CTA box ====== */
+    .cta-box{
+      margin-top:16px;
+      background:linear-gradient(180deg, rgba(123,211,137,0.04), rgba(123,211,137,0.01));
+      border-left:4px solid var(--success);
+      padding:14px;
+      border-radius:8px;
+    }
+    .steps{
+      display:flex;
+      gap:10px;
+      margin-top:12px;
+      flex-wrap:wrap;
+    }
+    .step{
+      background:var(--glass);
+      padding:10px 12px;
+      border-radius:8px;
+      border:1px solid rgba(255,255,255,0.02);
+      color:var(--muted);
+      font-weight:700;
+      font-size:14px;
+    }
+    .promo{
+      display:block;
+      margin-top:12px;
+      font-weight:800;
+      color:#071018;
+      background:linear-gradient(90deg,#ffd76b,#ffb84d);
+      padding:10px;
+      border-radius:8px;
+      text-align:center;
+    }
+
+    /* ====== Footer ====== */
+    footer{
+      margin-top:28px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    /* small helpers */
+    .muted { color:var(--muted); }
+    .mono { font-family:ui-monospace, SFMono-Regular, Menlo, monospace; color:#bcd2ff; }
+    .note { font-size:13px; color:var(--muted); margin-top:8px; }
+
   </style>
 </head>
 <body>
-  <div class="wrapper">
-    <div class="card">
-      <h1>MGBX Is the Hidden Gem You Haven’t Farmed Yet!</h1>
-      <div class="headline">Missed Hyperliquid? Tired of bot-ridden Perp DEXs? Real rewards, real users — MGBX changes the game.</div>
+  <div class="container">
 
-      <h2>Why MGBX?</h2>
-      <ul>
-        <li>☑️ Real users, not empty bot order books</li>
-        <li>☑️ Guaranteed platform token for active users</li>
-        <li>☑️ Echo Points: transparent farming, easy quests</li>
-        <li>☑️ Top dev team, fast updates</li>
-      </ul>
-      
-      <h2>Compare: MGBX vs Big DEXes</h2>
-      <table>
-        <tr>
-          <th>Feature</th>
-          <th>Big DEXes</th>
-          <th>MGBX</th>
-        </tr>
-        <tr>
-          <td class="key">Trades & Users</td>
-          <td>Millions of bots, fake depth</td>
-          <td><span class="highlight">Real traders, live liquidity</span></td>
-        </tr>
-        <tr>
-          <td class="key">Airdrop Odds</td>
-          <td>Diluted, recycled wallets</td>
-          <td><span class="highlight">Guaranteed for actives</span></td>
-        </tr>
-        <tr>
-          <td class="key">Reward Rules</td>
-          <td>Random, casino-like</td>
-          <td><span class="highlight">Transparent, simple</span></td>
-        </tr>
-        <tr>
-          <td class="key">Utility</td>
-          <td>Marketing hype</td>
-          <td><span class="highlight">Real value, events</span></td>
-        </tr>
-      </table>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-left">
+        <div class="kicker">Hidden Gem — Act Now</div>
+        <h1>Missed the Perp DEX Hype? MGBX Is the Opportunity Under the Radar</h1>
+        <p class="lead">Stop burning gas on leaderboard farms. MGBX is a fast-growing exchange with a guaranteed token airdrop for active users through the Echo Points (xMGBX) system.</p>
 
-      <h2>How Echo Points Work</h2>
-      <ul>
-        <li>Trade spot & futures</li>
-        <li>KYC and registration</li>
-        <li>Refer friends (up to 8pts/referral)</li>
-        <li>Complete platform quests</li>
-      </ul>
-
-      <div class="cta">
-        <b>First 100:</b> Get <span class="highlight">15 USDT bonus</span> instantly!<br>
-        <a href="https://mgbx.com/register/TszNGCic" class="btn" target="_blank">Sign up on MGBX</a><br>
-        Steps:<br>
-        • Register<br>
-        • Deposit 15 USDT<br>
-        • Make one futures trade<br>
-        <span style="color:var(--primary);font-weight:700;">Bonus for first 100 - hurry!</span>
+        <div class="cta-row">
+          <a href="https://mgbx.com/register/TszNGCic" target="_blank" rel="noopener" class="btn">Register & Get Bonus</a>
+          <a class="btn secondary" href="#how-it-works">How it works</a>
+        </div>
       </div>
 
-      <h2>Token + Project Airdrops: Double Value</h2>
-      <ul>
-        <li>Platform token airdrop</li>
-        <li>Access to ALL new project airdrops</li>
-        <li>Less dilution, bigger upside</li>
-        <li>188,888 USDT prize pools (TOKEN2049)</li>
-      </ul>
-      <div class="badges">
-        <a href="#">#MGBX</a>
-        <a href="#">#CryptoBonus</a>
-        <a href="#">#Airdrop</a>
-        <a href="#">#Web3</a>
+      <div class="hero-right">
+        <div class="badge">Guaranteed Airdrops</div>
+        <p class="note" style="margin-top:12px;">Official ambassador insight — real product, real liquidity, real users.</p>
       </div>
-      <div class="footer">
-        Official ambassador advice:<br>
-        Real gem isn’t on the front page. It’s growing quietly — don’t miss out!<br>
-        <a href="https://mgbx.com/register/TszNGCic" style="color:var(--primary);font-weight:700;">https://mgbx.com/register/TszNGCic</a>
+    </section>
+
+    <!-- GRID CONTENT -->
+    <div class="grid">
+      <!-- MAIN COLUMN -->
+      <div>
+        <!-- About -->
+        <div class="card" id="about">
+          <h2 style="margin-top:0;">Why MGBX?</h2>
+          <p class="muted">If you’ve been grinding Binance PerpDex, OKX or other “blogger darling” DEXes — half a million bots, zero real trades — you might be fighting noise, not opportunity. MGBX quietly grows with real users and real utility.</p>
+
+          <div class="highlight">
+            <strong>Short version:</strong> MGBX = <strong>low dilution + real utility</strong> → better airdrop outcome at TGE.
+          </div>
+
+          <h3 style="margin-bottom:6px;">Not Just Another “Airdrop Casino”</h3>
+          <table>
+            <thead><tr><th>Typical DEX hype</th><th>MGBX</th></tr></thead>
+            <tbody>
+              <tr><td class="muted">Leaderboard circus, recycled farm accounts</td><td>Real product, active devs, working features</td></tr>
+              <tr><td class="muted">High dilution, bot activity</td><td>Lower dilution, real user rewards</td></tr>
+              <tr><td class="muted">“Maybe you get lucky” airdrops</td><td>Guaranteed airdrops for active users</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Echo Points -->
+        <div class="card" id="echo">
+          <h2>Echo Points (xMGBX) — How to Win</h2>
+          <p class="muted">Launched <strong>October 3, 2025</strong>. Echo Points are the mechanism that turns activity into guaranteed value.</p>
+
+          <table>
+            <thead><tr><th>Earn xMGBX</th><th>Unlocks</th></tr></thead>
+            <tbody>
+              <tr><td>Trading (spot + futures)</td><td>Token redemption & guaranteed airdrop spots</td></tr>
+              <tr><td>KYC & registration</td><td>Eligibility and higher tiers</td></tr>
+              <tr><td>Referrals (up to 8 pts/referral)</td><td>Exclusive bonus rewards</td></tr>
+              <tr><td>Web3 platform quests</td><td>Access to early project drops</td></tr>
+            </tbody>
+          </table>
+
+          <div class="note">More points = stronger claim on future listings and platform token rewards.</div>
+        </div>
+
+        <!-- TOKEN2049 -->
+        <div class="card">
+          <h2>TOKEN2049 & Event Highlights</h2>
+          <p class="muted">MGBX hosted an aggressive campaign at TOKEN2049: <strong>$188,888 USDT</strong> prize pools, futures leaderboards, content competitions and more — real rewards, not just vanity metrics.</p>
+          <div class="note">Social, trading or referral — there are challenges and prizes for every style.</div>
+        </div>
+
+        <!-- Hidden Value -->
+        <div class="card">
+          <h2>Hidden Value: Compound Airdrops</h2>
+          <p class="muted">This is not a single token farm. Echo Points connect you to a pipeline of upcoming project airdrops on MGBX — early-bird campaigns with less dilution.</p>
+
+          <div class="highlight" style="margin-top:12px;">
+            <strong>Platform token airdrop + project listings = real compounded upside.</strong>
+          </div>
+
+          <h3 style="margin-top:16px;">Bold Take</h3>
+          <p class="muted">While most traders chase memecoins and noisy leaderboard airdrops on big DEXes with bot armies, MGBX provides lower dilution and practical utility — and that math favors real users at TGE.</p>
+        </div>
+
       </div>
-    </div>
+
+      <!-- SIDEBAR -->
+      <aside>
+        <div class="card">
+          <h3 style="margin-top:0;">Quick Facts</h3>
+          <p class="muted">What matters right now:</p>
+          <ul style="padding-left:18px; margin-top:8px; color:var(--muted)">
+            <li><strong>Echo Points:</strong> launched Oct 3, 2025</li>
+            <li><strong>TOKEN2049:</strong> $188,888 prize pools</li>
+            <li><strong>Style:</strong> real users, lower dilution</li>
+          </ul>
+
+          <div class="cta-box" style="margin-top:12px;">
+            <strong>Limited offer — first 100 users</strong>
+            <div class="steps" aria-hidden="true">
+              <div class="step">Sign up via referral</div>
+              <div class="step">Deposit 15 USDT</div>
+              <div class="step">Make 1 futures trade</div>
+            </div>
+
+            <a href="https://mgbx.com/register/TszNGCic" target="_blank" rel="noopener" class="promo">Grab 15 USDT bonus — Register</a>
+
+            <p class="note">Bonus credited instantly. First 100 only.</p>
+          </div>
+
+        </div>
+
+        <div class="card" style="margin-top:16px;">
+          <h3 style="margin-top:0;">Why This Matters</h3>
+          <p class="muted">If you want fewer bots, less dilution, and a bigger share of real value, you should consider moving activity to platforms that reward true engagement — Echo Points do exactly that.</p>
+        </div>
+
+        <div class="card" style="margin-top:16px;">
+          <h3 style="margin-top:0;">Join Now</h3>
+          <p class="muted">Register and start farming Echo Points today:</p>
+          <a class="btn" href="https://mgbx.com/register/TszNGCic" target="_blank" rel="noopener" style="display:block;text-align:center;margin-top:10px;">Register & Start Farming</a>
+        </div>
+      </aside>
+
+    </div> <!-- /grid -->
+
+    <footer>
+      <p>Written by an official ambassador. I follow this space and share what I see — the real opportunity often grows quietly. #MGBX #Airdrop #CryptoBonus</p>
+    </footer>
+
   </div>
 </body>
 </html>
